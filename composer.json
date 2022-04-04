@@ -22,7 +22,7 @@
 		}
 	],
 	"require": {
-		"php": "^8.0.0",
+		"php": "^8.1.4",
 		"ext-amqp": "*",
 		"ext-ctype": "*",
 		"ext-iconv": "*",
@@ -90,7 +90,7 @@
 	},
 	"config": {
 		"platform": {
-			"php": "8.0.0"
+			"php": "8.1.4"
 		},
 		"preferred-install": {
 			"*": "dist"
