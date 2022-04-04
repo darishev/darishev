@@ -9,7 +9,7 @@ doctrine:
             collate: utf8mb4_unicode_ci
 
         # https://symfony.com/doc/current/messenger.html#doctrine-transport
-        schema_filter: '~^(?!messenger_messages)~'
+        schema_filter: ~^(?!session)~
 
         url: '%env(resolve:DATABASE_URL)%'
     orm:
