@@ -55,7 +55,7 @@ services:
       ports:
         - 33061:3306
       volumes:
-        - ./var/mysql-data:/var/lib/mysql
+        - ./sql/mysql-data:/var/lib/mysql
         - ./docker/dev/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
       networks:
         - symfony
