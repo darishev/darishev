@@ -22,7 +22,7 @@ class Conference
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $City;
+    private $city;
 
     /**
      * @ORM\Column(type="string", length=4)
@@ -46,11 +46,8 @@ class Conference
 
     public function __toString(): string
     {
-        return $this->city.' '.$this->year;
+        return $this->city . ' ' . $this->year;
     }
-
-
-
 
     public function getId(): ?int
     {
