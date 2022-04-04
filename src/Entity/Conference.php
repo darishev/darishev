@@ -56,12 +56,12 @@ class Conference
 
     public function getCity(): ?string
     {
-        return $this->City;
+        return $this->city;
     }
 
-    public function setCity(string $City): self
+    public function setCity(string $city): self
     {
-        $this->City = $City;
+        $this->city = $city;
 
         return $this;
     }
