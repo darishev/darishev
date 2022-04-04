@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5bb2369e4a2da4a20cccd4c236ca1836",
+    "content-hash": "1fbd6608f00268396f5950472f728579",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -7006,27 +7006,28 @@
         },
         {
             "name": "symfony/security-csrf",
-            "version": "v6.0.3",
+            "version": "v5.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/security-csrf.git",
-                "reference": "fcf01e56fba0e7843da3205b9d05e4e86d3ef1f9"
+                "reference": "57c1c252ca756289c2b61327e08fb10be3936956"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/security-csrf/zipball/fcf01e56fba0e7843da3205b9d05e4e86d3ef1f9",
-                "reference": "fcf01e56fba0e7843da3205b9d05e4e86d3ef1f9",
+                "url": "https://api.github.com/repos/symfony/security-csrf/zipball/57c1c252ca756289c2b61327e08fb10be3936956",
+                "reference": "57c1c252ca756289c2b61327e08fb10be3936956",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.0.2",
-                "symfony/security-core": "^5.4|^6.0"
+                "php": ">=7.2.5",
+                "symfony/polyfill-php80": "^1.16",
+                "symfony/security-core": "^4.4|^5.0|^6.0"
             },
             "conflict": {
-                "symfony/http-foundation": "<5.4"
+                "symfony/http-foundation": "<5.3"
             },
             "require-dev": {
-                "symfony/http-foundation": "^5.4|^6.0"
+                "symfony/http-foundation": "^5.3|^6.0"
             },
             "suggest": {
                 "symfony/http-foundation": "For using the class SessionTokenStorage."
@@ -7057,7 +7058,7 @@
             "description": "Symfony Security Component - CSRF Library",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/security-csrf/tree/v6.0.3"
+                "source": "https://github.com/symfony/security-csrf/tree/v5.4.3"
             },
             "funding": [
                 {
@@ -7073,7 +7074,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-02T09:55:41+00:00"
+            "time": "2022-01-02T09:53:40+00:00"
         },
         {
             "name": "symfony/security-guard",

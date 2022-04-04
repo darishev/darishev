@@ -12,7 +12,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 /**
  * @ORM\Entity(repositoryClass=ConferenceRepository::class)
  */
-#[UniqueEntity('slug')]
+#[UniqueEntity("slug")]
 class Conference
 {
     /**
@@ -43,7 +43,7 @@ class Conference
     private $comments;
 
     /**
-     * @ORM\Column(type="string", length=255, unique: true)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $slug;
 
@@ -62,10 +62,11 @@ class Conference
         return $this->id;
     }
 
+
     public function computeSlug(SluggerInterface $slugger)
     {
         if (!$this->slug || '-' === $this->slug) {
-            $this->slug = (string)$slugger->slug((string)$this)->lower();
+            $this->slug = (string) $slugger->slug((string) $this)->lower();
         }
     }
 
