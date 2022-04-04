@@ -135,8 +135,9 @@ class Comment
 
         return $this;
     }
-
-    #[ORM\PrePersist]
+    /**
+     * @ORM\PrePersist
+     */
     public function setCreatedAtValue()
     {
         $this->createdAt = new \DateTimeImmutable();
