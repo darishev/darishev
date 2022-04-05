@@ -15,6 +15,7 @@ class ConferenceControllerTest extends WebTestCase
         $this->assertSelectorTextContains('h2', 'Give your feedback');
     }
 
+
     public function testConferencePage()
     {
         $client = static::createClient();
