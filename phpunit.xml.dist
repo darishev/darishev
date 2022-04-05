@@ -26,14 +26,10 @@
     </coverage>
     <php>
         <ini name="error_reporting" value="-1" />
-        <ini name="display_errors" value="On" />
-        <ini name="display_startup_errors" value="On" />
-        <ini name="date.timezone" value="UTC" />
-
-        <env name="KERNEL_CLASS" value="App\Kernel" />
-        <env name="APP_ENV" value="test" force="true" />
-        <env name="SHELL_VERBOSITY" value="-1" />
-        <env name="APP_DEBUG" value="0" />
+        <server name="APP_ENV" value="test" force="true" />
+        <server name="SHELL_VERBOSITY" value="-1" />
+        <server name="SYMFONY_PHPUNIT_REMOVE" value="" />
+        <server name="SYMFONY_PHPUNIT_VERSION" value="8.5" />
     </php>
     <listeners>
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
@@ -47,4 +43,7 @@
             <directory suffix="Test.php">./tests/Functional</directory>
         </testsuite>
     </testsuites>
+
+
+
 </phpunit>

@@ -56,7 +56,6 @@ when@test:
             autowire: true
             autoconfigure: true
             public: true
-
         App\DataFixtures\:
             resource: '../src/DataFixtures/'
             tags: [ 'doctrine.fixture.orm' ]

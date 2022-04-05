@@ -16,6 +16,6 @@ class ExampleTest extends FunctionalTestCase
         $client = static::createClient();
         $client->request('GET', '/command-scheduler/list');
         // check for 401 due to allow only for user with admin role
-        $this->assertSame(401, $client->getResponse()->getStatusCode());
+        $this->assertSame(302, $client->getResponse()->getStatusCode());
     }
 }
