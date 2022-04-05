@@ -416,7 +416,7 @@
       <tag name="ea.crud_controller"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.fVPZPtt.App\Controller\Admin\CommentCrudController"/>
+        <argument type="service" id=".service_locator.dFRsLd..App\Controller\Admin\CommentCrudController"/>
       </call>
     </service>
     <service id="App\Controller\Admin\ConferenceCrudController" class="App\Controller\Admin\ConferenceCrudController" public="true" autowire="true" autoconfigure="true">
@@ -424,7 +424,7 @@
       <tag name="ea.crud_controller"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.fVPZPtt.App\Controller\Admin\ConferenceCrudController"/>
+        <argument type="service" id=".service_locator.dFRsLd..App\Controller\Admin\ConferenceCrudController"/>
       </call>
     </service>
     <service id="App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" public="true" autowire="true" autoconfigure="true">
@@ -432,7 +432,7 @@
       <tag name="ea.dashboard_controller"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.1dSzAak.App\Controller\Admin\DashboardController"/>
+        <argument type="service" id=".service_locator.lAd6RVG.App\Controller\Admin\DashboardController"/>
       </call>
     </service>
     <service id="App\Controller\ConferenceController" class="App\Controller\ConferenceController" public="true" autowire="true" autoconfigure="true">
@@ -441,14 +441,14 @@
       <argument type="service" id="twig"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.JC.qEFX.App\Controller\ConferenceController"/>
+        <argument type="service" id=".service_locator.1HrcOqW.App\Controller\ConferenceController"/>
       </call>
     </service>
     <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.JC.qEFX.App\Controller\SecurityController"/>
+        <argument type="service" id=".service_locator.FAk2rJY.App\Controller\SecurityController"/>
       </call>
     </service>
     <service id="App\EntityListener\ConferenceEntityListener" class="App\EntityListener\ConferenceEntityListener" autowire="true" autoconfigure="true">
@@ -487,6 +487,10 @@
     </service>
     <service id="App\Service\MessageService" class="App\Service\MessageService" autowire="true" autoconfigure="true">
       <argument type="service" id="debug.traced.command_bus"/>
+    </service>
+    <service id="App\SpamChecker" class="App\SpamChecker" autowire="true" autoconfigure="true">
+      <argument type="service" id=".debug.http_client"/>
+      <argument>%env(AKISMET_KEY)%</argument>
     </service>
     <service id="App\Service\Interfaces\MessageServiceInterface" class="App\Service\MessageService" autowire="true" autoconfigure="true">
       <argument type="service" id="debug.traced.command_bus"/>
@@ -3076,7 +3080,7 @@
     <service id="router.default" class="Symfony\Bundle\FrameworkBundle\Routing\Router">
       <tag name="monolog.logger" channel="router"/>
       <tag name="container.service_subscriber" id="routing.loader"/>
-      <argument type="service" id=".service_locator.NUKe30Y.router.default"/>
+      <argument type="service" id=".service_locator.gOdCe1K.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
         <argument key="cache_dir">/var/www/html/var/cache/dev</argument>
@@ -7746,12 +7750,20 @@
         <argument key="conferenceRepository" type="service_closure" id="App\Repository\ConferenceRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.VocWbTp" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".value.3qU50kt" class="mixed">
+      <argument type="collection">
+        <argument>/var/www/html/public/uploads/photos</argument>
+      </argument>
+      <factory function="current"/>
+    </service>
+    <service id=".service_locator.Th8Bxod" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="commentRepository" type="service_closure" id="App\Repository\CommentRepository"/>
-        <argument key="conference" type="service_closure" id=".errored..service_locator.VocWbTp.App\Entity\Conference"/>
+        <argument key="conference" type="service_closure" id=".errored..service_locator.Th8Bxod.App\Entity\Conference"/>
         <argument key="conferenceRepository" type="service_closure" id="App\Repository\ConferenceRepository"/>
+        <argument key="photoDir" type="service_closure" id=".value.3qU50kt"/>
+        <argument key="spamChecker" type="service_closure" id="App\SpamChecker"/>
       </argument>
     </service>
     <service id=".service_locator.zFcJjKU" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7790,7 +7802,7 @@
         <argument key="createdAt" type="service_closure" id=".errored..service_locator.jVIJtSF.DateTime"/>
       </argument>
     </service>
-    <service id=".service_locator..qTJeKr" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Z0rEPr_" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CommentCrudController::autocomplete" type="service_closure" id=".service_locator.kEvhmk9"/>
@@ -7837,7 +7849,7 @@
         <argument key="App\Controller\Admin\ConferenceCrudController::updateEntity" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\Admin\DashboardController::configureUserMenu" type="service_closure" id=".service_locator.st3ASTR"/>
         <argument key="App\Controller\ConferenceController::index" type="service_closure" id=".service_locator.Lwh3nbS"/>
-        <argument key="App\Controller\ConferenceController::show" type="service_closure" id=".service_locator.VocWbTp"/>
+        <argument key="App\Controller\ConferenceController::show" type="service_closure" id=".service_locator.Th8Bxod"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.zFcJjKU"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -7891,7 +7903,7 @@
         <argument key="App\Controller\Admin\ConferenceCrudController:updateEntity" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\Admin\DashboardController:configureUserMenu" type="service_closure" id=".service_locator.st3ASTR"/>
         <argument key="App\Controller\ConferenceController:index" type="service_closure" id=".service_locator.Lwh3nbS"/>
-        <argument key="App\Controller\ConferenceController:show" type="service_closure" id=".service_locator.VocWbTp"/>
+        <argument key="App\Controller\ConferenceController:show" type="service_closure" id=".service_locator.Th8Bxod"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.zFcJjKU"/>
         <argument key="Dukecity\CommandSchedulerBundle\Entity\ScheduledCommand:setCreatedAt" type="service_closure" id=".service_locator.jVIJtSF"/>
         <argument key="Dukecity\CommandSchedulerBundle\Entity\ScheduledCommand:setLastExecution" type="service_closure" id=".service_locator.qDI5CKK"/>
@@ -8481,7 +8493,7 @@
         <argument key="translation.loader.yml" type="service_closure" id="translation.loader.yml"/>
       </argument>
     </service>
-    <service id=".service_locator.fVPZPtt" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.dFRsLd." class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="EasyCorp\Bundle\EasyAdminBundle\Factory\ActionFactory" type="service_closure" id="EasyCorp\Bundle\EasyAdminBundle\Factory\ActionFactory" on-invalid="ignore"/>
@@ -8512,19 +8524,19 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id=".service_locator.fVPZPtt.App\Controller\Admin\CommentCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.dFRsLd..App\Controller\Admin\CommentCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\CommentCrudController"/>
       <argument>App\Controller\Admin\CommentCrudController</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.fVPZPtt" method="withContext"/>
+      <factory service=".service_locator.dFRsLd." method="withContext"/>
     </service>
-    <service id=".service_locator.fVPZPtt.App\Controller\Admin\ConferenceCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.dFRsLd..App\Controller\Admin\ConferenceCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\ConferenceCrudController"/>
       <argument>App\Controller\Admin\ConferenceCrudController</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.fVPZPtt" method="withContext"/>
+      <factory service=".service_locator.dFRsLd." method="withContext"/>
     </service>
-    <service id=".service_locator.1dSzAak" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.lAd6RVG" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator" type="service_closure" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator" on-invalid="ignore"/>
@@ -8544,13 +8556,13 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id=".service_locator.1dSzAak.App\Controller\Admin\DashboardController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.lAd6RVG.App\Controller\Admin\DashboardController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\DashboardController"/>
       <argument>App\Controller\Admin\DashboardController</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.1dSzAak" method="withContext"/>
+      <factory service=".service_locator.lAd6RVG" method="withContext"/>
     </service>
-    <service id=".service_locator.JC.qEFX" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.1HrcOqW" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="doctrine" type="service_closure" id="doctrine" on-invalid="ignore"/>
@@ -8569,17 +8581,36 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id=".service_locator.JC.qEFX.App\Controller\ConferenceController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.1HrcOqW.App\Controller\ConferenceController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ConferenceController"/>
       <argument>App\Controller\ConferenceController</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.JC.qEFX" method="withContext"/>
+      <factory service=".service_locator.1HrcOqW" method="withContext"/>
     </service>
-    <service id=".service_locator.JC.qEFX.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.FAk2rJY" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="doctrine" type="service_closure" id="doctrine" on-invalid="ignore"/>
+        <argument key="form.factory" type="service_closure" id="form.factory" on-invalid="ignore"/>
+        <argument key="http_kernel" type="service_closure" id="http_kernel" on-invalid="ignore"/>
+        <argument key="message_bus" type="service_closure" id="debug.traced.command_bus" on-invalid="ignore"/>
+        <argument key="messenger.default_bus" type="service_closure" id="debug.traced.command_bus" on-invalid="ignore"/>
+        <argument key="parameter_bag" type="service_closure" id="parameter_bag" on-invalid="ignore"/>
+        <argument key="request_stack" type="service_closure" id="request_stack" on-invalid="ignore"/>
+        <argument key="router" type="service_closure" id="router.default" on-invalid="ignore"/>
+        <argument key="security.authorization_checker" type="service_closure" id="security.authorization_checker" on-invalid="ignore"/>
+        <argument key="security.csrf.token_manager" type="service_closure" id="security.csrf.token_manager" on-invalid="ignore"/>
+        <argument key="security.token_storage" type="service_closure" id="security.token_storage" on-invalid="ignore"/>
+        <argument key="serializer" type="service_closure" id="serializer" on-invalid="ignore"/>
+        <argument key="session" type="service_closure" id=".session.deprecated" on-invalid="ignore"/>
+        <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
+      </argument>
+    </service>
+    <service id=".service_locator.FAk2rJY.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\SecurityController"/>
       <argument>App\Controller\SecurityController</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.JC.qEFX" method="withContext"/>
+      <factory service=".service_locator.FAk2rJY" method="withContext"/>
     </service>
     <service id=".service_locator.wSgjnB6" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -8593,17 +8624,17 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.wSgjnB6" method="withContext"/>
     </service>
-    <service id=".service_locator.NUKe30Y" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.gOdCe1K" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="routing.loader" type="service_closure" id="routing.loader"/>
       </argument>
     </service>
-    <service id=".service_locator.NUKe30Y.router.default" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.gOdCe1K.router.default" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="router.default"/>
       <argument>router.default</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.NUKe30Y" method="withContext"/>
+      <factory service=".service_locator.gOdCe1K" method="withContext"/>
     </service>
     <service id=".service_locator.oCg4uHe" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -8796,12 +8827,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator..qTJeKr"/>
+      <argument type="service" id=".service_locator.Z0rEPr_"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator..qTJeKr"/>
+      <argument type="service" id=".service_locator.Z0rEPr_"/>
     </service>
     <service id="debug.traced.command_bus.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8862,7 +8893,7 @@
     <service id=".errored..service_locator.riFbGaB.EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore" class="EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore"/>
     <service id=".errored..service_locator.W.c5h2_.EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore" class="EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore"/>
     <service id=".errored..service_locator.st3ASTR.Symfony\Component\Security\Core\User\UserInterface" class="Symfony\Component\Security\Core\User\UserInterface"/>
-    <service id=".errored..service_locator.VocWbTp.App\Entity\Conference" class="App\Entity\Conference"/>
+    <service id=".errored..service_locator.Th8Bxod.App\Entity\Conference" class="App\Entity\Conference"/>
     <service id=".errored..service_locator.qDI5CKK.DateTime" class="DateTime"/>
     <service id=".errored..service_locator.jVIJtSF.DateTime" class="DateTime"/>
     <service id=".console.command.about.lazy" class="Symfony\Component\Console\Command\LazyCommand">
@@ -9921,7 +9952,7 @@
     <service id="monolog.handler.easylog" alias="easy_log.handler"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator..qTJeKr"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Z0rEPr_"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9949,15 +9980,16 @@
     <service id=".service_locator.nTL_G5r" alias=".service_locator.esmk6IF"/>
     <service id=".service_locator.hNls88j" alias=".service_locator.ENGuM7_"/>
     <service id=".service_locator.6rNHno." alias=".service_locator.riFbGaB"/>
-    <service id=".service_locator.JH1UPMC" alias=".service_locator.VocWbTp"/>
-    <service id=".service_locator.MyewttU" alias=".service_locator..qTJeKr"/>
+    <service id=".service_locator.LN0xuNt" alias=".service_locator.Th8Bxod"/>
+    <service id=".service_locator.APHgi06" alias=".service_locator.Z0rEPr_"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.IU8hKVa" alias=".service_locator.RYKTkLp"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
-    <service id=".service_locator.3gaiVcM" alias=".service_locator.fVPZPtt"/>
-    <service id=".service_locator.yAq9NvT" alias=".service_locator.1dSzAak"/>
-    <service id=".service_locator.qeLntdn" alias=".service_locator.JC.qEFX"/>
+    <service id=".service_locator.s67AQ2e" alias=".service_locator.dFRsLd."/>
+    <service id=".service_locator.Gntedci" alias=".service_locator.lAd6RVG"/>
+    <service id=".service_locator.bCz8riR" alias=".service_locator.1HrcOqW"/>
+    <service id=".service_locator.Hw7bsed" alias=".service_locator.FAk2rJY"/>
     <service id=".service_locator.0ghLsew" alias=".service_locator.mx0UMmY"/>
     <service id="validator" alias="debug.validator" public="true"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
@@ -9996,16 +10028,17 @@
     <service id=".service_locator.YGHh.DA" alias=".service_locator.W.c5h2_"/>
     <service id=".service_locator..Z_8zjg" alias=".service_locator.st3ASTR"/>
     <service id=".service_locator.kMmc1Km" alias=".service_locator.Lwh3nbS"/>
-    <service id=".service_locator.8XR5Pcu" alias=".service_locator.VocWbTp"/>
+    <service id=".service_locator.2MH0e2b" alias=".service_locator.Th8Bxod"/>
     <service id=".service_locator.URfgn8g" alias=".service_locator.zFcJjKU"/>
     <service id=".service_locator.426yQGu" alias=".service_locator.q2ji3lu"/>
     <service id=".service_locator.6u2lGWO" alias=".service_locator.B2N.LKQ"/>
     <service id=".service_locator.MjdgTDX" alias=".service_locator.VM3vZIl"/>
     <service id=".service_locator.1hmW9kZ" alias=".service_locator.qDI5CKK"/>
     <service id=".service_locator.5mkJuum" alias=".service_locator.jVIJtSF"/>
-    <service id=".service_locator.wiRv3_6" alias=".service_locator.fVPZPtt"/>
-    <service id=".service_locator.VOAInB8" alias=".service_locator.1dSzAak"/>
-    <service id=".service_locator.Kb4Gp9S" alias=".service_locator.JC.qEFX"/>
+    <service id=".service_locator.ESPnH1p" alias=".service_locator.dFRsLd."/>
+    <service id=".service_locator.0Ncx5zL" alias=".service_locator.lAd6RVG"/>
+    <service id=".service_locator.ed9qIiF" alias=".service_locator.1HrcOqW"/>
+    <service id=".service_locator.KorLJBC" alias=".service_locator.FAk2rJY"/>
     <service id=".service_locator.A740LBW" alias=".service_locator.mx0UMmY"/>
     <service id=".service_locator.L0rFhJm" alias=".service_locator.GVyCdgr"/>
     <service id=".service_locator.pFwChgS" alias=".service_locator.UkE3SaZ"/>
