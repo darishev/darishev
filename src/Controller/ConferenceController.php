@@ -57,7 +57,7 @@ class ConferenceController extends AbstractController
             }
             $this->entityManager->persist($comment);
             $this->entityManager->flush();
-            $context = [ 
+            $context = [
                 'user_ip' => $request->getClientIp(),
                 'user_agent' => $request->headers->get('user-agent'),
                 'referrer' => $request->headers->get('referer'),
