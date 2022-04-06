@@ -6,3 +6,6 @@ tests:
 
 mgrs:
 	php bin/console doctrine:migrations:migrate
+
+mig:
+	php bin/console make:migration

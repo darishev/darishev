@@ -61,6 +61,7 @@ framework:
 
             # Uncomment the following line to enable a transport named "amqp"
             # async: '%env(MESSENGER_TRANSPORT_DSN)%'
+            # async: '%env(RABBITMQ_DSN)%'
             failed: 'doctrine://default?queue_name=failed'
 
         routing:
@@ -68,4 +69,4 @@ framework:
             App\Message\Interfaces\MessageLowInterface: async_priority_low
 
             # Route your messages to the transports
-            # 'App\Message\YourMessage': async
+            App\Message\CommentMessage: async_priority_low

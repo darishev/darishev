@@ -12,7 +12,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20220406110101 extends AbstractMigration
+final class Version20220406123746 extends AbstractMigration
 {
     /**
      * @noinspection PhpMissingParentCallCommonInspection
@@ -41,6 +41,7 @@ final class Version20220406110101 extends AbstractMigration
             'Migration can only be executed safely on \'mysql\'.'
         );
 
+        $this->addSql('ALTER TABLE comment ADD state VARCHAR(255) NOT NULL');
         $this->addSql("UPDATE comment SET state='published'");
     }
 
@@ -57,6 +58,6 @@ final class Version20220406110101 extends AbstractMigration
             'Migration can only be executed safely on \'mysql\'.'
         );
 
-        $this->addSql('DROP INDEX UNIQ_911533C8989D9B62 ON conference');
+        $this->addSql('ALTER TABLE comment DROP nstate');
     }
 }

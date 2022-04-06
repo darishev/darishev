@@ -5,6 +5,7 @@ namespace App\Tests\Controller;
 use Symfony\Component\Panther\PantherTestCase;
 use App\Repository\CommentRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class ConferenceControllerTest extends PantherTestCase
 {
