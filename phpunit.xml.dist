@@ -25,14 +25,14 @@
         </exclude>
     </coverage>
     <php>
-        <ini name="error_reporting" value="-1" />
-        <server name="APP_ENV" value="test" force="true" />
-        <server name="SHELL_VERBOSITY" value="-1" />
-        <server name="SYMFONY_PHPUNIT_REMOVE" value="" />
-        <server name="SYMFONY_PHPUNIT_VERSION" value="8.5" />
+        <ini name="error_reporting" value="-1"/>
+        <server name="APP_ENV" value="test" force="true"/>
+        <server name="SHELL_VERBOSITY" value="-1"/>
+        <server name="SYMFONY_PHPUNIT_REMOVE" value=""/>
+        <server name="SYMFONY_PHPUNIT_VERSION" value="8.5"/>
     </php>
     <listeners>
-        <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
+        <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener"/>
     </listeners>
     <testsuites>
         <testsuite name="Unit">
@@ -43,7 +43,9 @@
             <directory suffix="Test.php">./tests/Functional</directory>
         </testsuite>
     </testsuites>
-
+    <extensions>
+        <extension class="DAMA\DoctrineTestBundle\PHPUnit\PHPUnitExtension"/>
+    </extensions>
 
 
 </phpunit>

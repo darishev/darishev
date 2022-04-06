@@ -68,3 +68,9 @@ ed97f3,172.18.0.1,GET,http://127.0.0.1/admin?crudAction=index&crudControllerFqcn
 0fc45f,172.18.0.1,GET,http://127.0.0.1/,1649235299,,200
 f2da75,172.18.0.1,GET,http://127.0.0.1/,1649235742,,200
 34253b,172.18.0.1,GET,http://127.0.0.1/conference/amsterdam-2019,1649235743,,200
+d66bce,172.18.0.1,GET,http://127.0.0.1/conference/,1649241616,1e7a73,404
+1e7a73,172.18.0.1,GET,http://127.0.0.1/conference/,1649241616,,404
+2c46cc,172.18.0.1,GET,http://127.0.0.1/,1649241652,,200
+e34bd0,172.18.0.1,GET,http://127.0.0.1/conference/amsterdam-2019,1649241654,,200
+05d5e4,172.18.0.1,POST,http://127.0.0.1/conference/amsterdam-2019,1649241665,,302
+0bcc52,172.18.0.1,GET,http://127.0.0.1/conference/amsterdam-2019,1649241665,,200
