@@ -1,6 +1,7 @@
 /.idea
 reports/*
 !reports/.gitkeep
+/public/uploads/
 /var/cache/
 ###> symfony/framework-bundle ###
 /.env.local
