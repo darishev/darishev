@@ -54,7 +54,7 @@ framework:
                     max_retries: 3
                     # milliseconds delay
                     delay: 5000
-                    # causes the delay to be higher before each retry
+                    # causes the delay to be higher before  each retry
                     # e.g. 1 second delay, 2 seconds, 4 seconds
                     multiplier: 2
                     max_delay: 0

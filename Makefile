@@ -9,3 +9,4 @@ mgrs:
 
 mig:
 	php bin/console make:migration
+
