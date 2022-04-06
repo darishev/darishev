@@ -74,3 +74,5 @@ d66bce,172.18.0.1,GET,http://127.0.0.1/conference/,1649241616,1e7a73,404
 e34bd0,172.18.0.1,GET,http://127.0.0.1/conference/amsterdam-2019,1649241654,,200
 05d5e4,172.18.0.1,POST,http://127.0.0.1/conference/amsterdam-2019,1649241665,,302
 0bcc52,172.18.0.1,GET,http://127.0.0.1/conference/amsterdam-2019,1649241665,,200
+70fd48,172.18.0.1,GET,http://127.0.0.1/,1649242128,,200
+43c436,172.18.0.1,GET,http://127.0.0.1/conference/amsterdam-2019,1649243596,,200
