@@ -133,12 +133,14 @@ class Comment
     public function getPhotoFilename(): ?string
     {
         return $this->photoFilename;
+
+
     }
 
     public function setPhotoFilename(?string $photoFilename): self
     {
         $this->photoFilename = $photoFilename;
-
+           ;
         return $this;
     }
 

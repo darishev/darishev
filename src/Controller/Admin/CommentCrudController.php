@@ -39,6 +39,7 @@ class CommentCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
+        dump($pageName);
         yield AssociationField::new('conference');
         yield TextField::new('author');
         yield EmailField::new('email');
