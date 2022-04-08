@@ -54,19 +54,19 @@ framework:
                     max_retries: 3
                     # milliseconds delay
                     delay: 5000
-                    # causes the delay to be higher before  each retry
+                    # causes the delay to be higher before each retry
                     # e.g. 1 second delay, 2 seconds, 4 seconds
                     multiplier: 2
                     max_delay: 0
 
             # Uncomment the following line to enable a transport named "amqp"
             # async: '%env(MESSENGER_TRANSPORT_DSN)%'
-            # async: '%env(RABBITMQ_DSN)%'
             failed: 'doctrine://default?queue_name=failed'
 
         routing:
             App\Message\Interfaces\MessageHighInterface: async_priority_high
             App\Message\Interfaces\MessageLowInterface: async_priority_low
+            App\Message\CommentMessage: async_priority_high
 
             # Route your messages to the transports
-            App\Message\CommentMessage: async_priority_low
+            # 'App\Message\YourMessage': async
