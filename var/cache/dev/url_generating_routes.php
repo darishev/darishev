@@ -27,6 +27,7 @@ return [
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     'admin' => [[], ['_controller' => 'App\\Controller\\Admin\\DashboardController::index'], [], [['text', '/admin']], [], [], []],
+    'review_comment' => [['id'], ['_controller' => 'App\\Controller\\AdminController::reviewComment'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/comment/review']], [], [], []],
     'homepage' => [[], ['_controller' => 'App\\Controller\\ConferenceController::index'], [], [['text', '/']], [], [], []],
     'conference_header' => [[], ['_controller' => 'App\\Controller\\ConferenceController::conferenceHeader'], [], [['text', '/conference_header']], [], [], []],
     'conference' => [['slug'], ['_controller' => 'App\\Controller\\ConferenceController::show'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/conference']], [], [], []],

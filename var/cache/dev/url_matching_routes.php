@@ -59,6 +59,7 @@ return [
                     .')'
                     .'|error/(\\d+)(?:\\.([^/]++))?(*:455)'
                 .')'
+                .'|/admin/comment/review/([^/]++)(*:494)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -76,8 +77,9 @@ return [
         397 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         410 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         420 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        455 => [
-            [['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null],
+        455 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        494 => [
+            [['_route' => 'review_comment', '_controller' => 'App\\Controller\\AdminController::reviewComment'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

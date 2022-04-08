@@ -160,6 +160,9 @@
     "localheinz/diff": {
         "version": "1.0.1"
     },
+    "lorenzo/pinky": {
+        "version": "1.0.6"
+    },
     "lorisleiva/cron-translator": {
         "version": "v0.2.1"
     },
@@ -745,8 +748,17 @@
     "theseer/tokenizer": {
         "version": "1.2.1"
     },
+    "tijsverkoyen/css-to-inline-styles": {
+        "version": "2.2.4"
+    },
+    "twig/cssinliner-extra": {
+        "version": "v3.3.5"
+    },
     "twig/extra-bundle": {
         "version": "v3.3.1"
+    },
+    "twig/inky-extra": {
+        "version": "v3.3.5"
     },
     "twig/intl-extra": {
         "version": "v3.3.5"

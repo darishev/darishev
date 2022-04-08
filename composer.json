@@ -30,6 +30,7 @@
 		"ext-mbstring": "*",
 		"ext-pdo": "*",
 		"ext-pdo_mysql": "*",
+		"ext-xsl": "*",
 		"dama/doctrine-test-bundle": "^6",
 		"doctrine/annotations": "^1.13",
 		"doctrine/doctrine-bundle": "^2.5",
@@ -37,6 +38,7 @@
 		"doctrine/orm": "^2.10",
 		"dukecity/command-scheduler-bundle": "^4.0",
 		"easycorp/easyadmin-bundle": "^4",
+		"lorenzo/pinky": "^1.0",
 		"phpdocumentor/reflection-docblock": "^5.3",
 		"sensio/framework-extra-bundle": "^6.2",
 		"symfony/asset": "5.4.*",
@@ -72,9 +74,11 @@
 		"symfony/web-link": "5.4.*",
 		"symfony/workflow": "5.4.*",
 		"symfony/yaml": "5.4.*",
+		"twig/cssinliner-extra": "^3.3",
 		"twig/extra-bundle": "^2.12|^3.0",
+		"twig/inky-extra": "^3.3",
 		"twig/intl-extra": "^3",
-		"twig/twig": "^2.12|^3.0"
+		"twig/twig": "^3.3"
 	},
 	"conflict": {
 		"symfony/debug": "<3.3",

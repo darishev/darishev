@@ -27,6 +27,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
       unzip \
       libicu-dev \
       zlib1g-dev \
+      libxslt1-dev \
       libxml2 \
       libxml2-dev \
       libreadline-dev \
@@ -41,6 +42,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     && docker-php-ext-configure intl \
     && docker-php-ext-install \
       pdo_mysql \
+      xsl \
       sockets \
       intl \
       opcache \
@@ -49,8 +51,9 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     && rm -rf /tmp/* \
     && rm -rf /var/list/apt/* \
     && rm -rf /var/lib/apt/lists/* \
-    && apt-get clean
+    && apt-get clean \
 
+RUN docker-php-ext-enable libxslt1-dev
 # create document root, fix permissions for www-data user and change owner to www-data
 RUN mkdir -p $APP_HOME/public && \
     mkdir -p /home/$USERNAME && chown $USERNAME:$USERNAME /home/$USERNAME \
